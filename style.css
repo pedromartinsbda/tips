@@ -1,0 +1,159 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+ }
+ 
+ @keyframes entering {
+    from {
+     opacity: 0;
+     transform: translateY(-200px);
+    }
+    to {
+     opacity: 1;
+     transform: translateY(0);
+    }
+ }
+ 
+ body {
+     background: #121215;
+     color: #EAEAEa;
+     font-family: 'Roboto', sans-serif;
+     display: grid;
+     grid-template-areas: "profile timeline";
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 100vh;
+ }
+
+ .whatsapp-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .whatsapp-input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+ 
+ nav {
+     padding: 64px;
+     grid-area: timeline;
+     overflow-y: scroll;
+     animation: entering 0.7s ease-in-out;
+ }
+ 
+ .memory {
+    display: flex; 
+    flex-direction: column;
+    gap: 16px; 
+    text-decoration: none; 
+    margin-bottom: 64px; 
+    align-items: center; 
+    justify-content: center;
+}
+
+ 
+ .memory small {
+    color: #BEBEBF;
+    font-size: 0.75rem;
+    
+ }
+ 
+ .memory h1 {
+     font-size: 2rem;
+     color: #eaeaea;
+ }
+ 
+ .memory img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+ }
+ 
+ .memory:hover img {
+     transform: scale(1.1);
+ }
+ 
+ .memory div {
+     width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+ }
+ 
+ .memory p {
+     font-size: 1.2rem;
+     color: #BEBEBF;
+     line-height: 28px;
+ }
+ 
+ aside {
+     grid-area: profile;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+     border-right: 1px solid;
+     border-image: linear-gradient(#727275, #2c2c31) 1;
+     background-image: url(./assets/background.svg);
+     background-position: top right;
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+ }
+
+ 
+aside img {
+     width: 160px;
+     height: 160px;
+     border-radius: 50%;
+     border: 4px solid transparent;
+     background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box, linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+ }
+ 
+ aside p {
+     font-size: 2rem;
+     text-align: center;
+ }
+ 
+ 
+ @media (max-width: 768px){
+     :root {
+         font-size: 14px;
+     }
+ 
+     body {
+         grid-template-columns: 1fr;
+         grid-template-rows: 0.2fr 0.8fr;
+         grid-template-areas: 
+         "profile"
+         "timeline";
+     }
+ 
+ aside {
+     border-right: none;
+     padding: 32px 12px;
+ }
+ 
+ nav {
+     overflow-y: visible;
+     padding: 22px;
+ }
+ 
+ }
